@@ -2,25 +2,15 @@ import React from 'react'
 import UsersSearch from '../components/UsersSearch'
 import UsersList from '../components/UsersList'
 import UsersModal from '../components/UsersModal'
-function Users(){
+import {connect} from 'dva'
+
+function Users(props){
     const usersSearchProps = {}
     const usersListProps = {
-         dataSource:[
-            {
-                key:'1',
-                name:'郭杰',
-                age:'44',
-                address:'华北',
-            },
-            {
-                key:'2',
-                name:'郭杰',
-                age:'44',
-                address:'华北',
-            }
-        ]
+         dataSource:props.list
     }
     const userModalProps = {}
+    console.log({...usersListProps})
     return(
         <div>User Route Component
             <UsersSearch {...usersSearchProps}/>
@@ -29,4 +19,7 @@ function Users(){
         </div>
     )
 }
-export default Users
+function mapStateToProps(state){
+    return {list:state.users}
+}
+export default connect(mapStateToProps)(Users)

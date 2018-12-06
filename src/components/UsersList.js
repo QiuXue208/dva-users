@@ -38,7 +38,7 @@ function UsersList({dataSource}){
     ]
   return (
     <div>Users List
-        <Table columns={columns} dataSource={dataSource}></Table>
+        <Table columns={columns} dataSource={dataSource.list}></Table>
     </div>
   )
 }
