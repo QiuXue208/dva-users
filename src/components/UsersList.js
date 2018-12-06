@@ -1,7 +1,7 @@
 import React from 'react';
 import {Popconfirm,Table} from 'antd'
 
-function UsersList(){
+function UsersList({dataSource}){
     const columns = [
         {
             title:'Name',
@@ -34,20 +34,6 @@ function UsersList(){
                     </p>
                 )
             }
-        }
-    ]
-    const dataSource = [
-        {
-            key:'1',
-            name:'郭杰',
-            age:'44',
-            address:'华北',
-        },
-        {
-            key:'2',
-            name:'郭杰',
-            age:'44',
-            address:'华北',
         }
     ]
   return (
