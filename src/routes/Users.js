@@ -1,7 +1,6 @@
 import React from 'react'
 import UsersSearch from '../components/UsersSearch'
 import UsersList from '../components/UsersList'
-import UsersModal from '../components/UsersModal'
 import {connect} from 'dva'
 
 function Users(props){
