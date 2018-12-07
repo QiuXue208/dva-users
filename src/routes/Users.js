@@ -17,10 +17,9 @@ function Users(props){
         console.log(2)
     }
     return(
-        <div>User Route Component
+        <div>
             <UsersSearch/>
             <UsersList onDelete={handleDelete} {...usersListProps}/>
-            <UsersModal/>
         </div>
     )
 }
