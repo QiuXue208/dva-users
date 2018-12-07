@@ -1,7 +1,7 @@
 import React from 'react';
-import {Popconfirm,Table} from 'antd'
+import {Button,Popconfirm,Table} from 'antd'
 
-function UsersList({dataSource}){
+function UsersList(props){
     const columns = [
         {
             title:'Name',
@@ -23,13 +23,13 @@ function UsersList({dataSource}){
             title:'Action',
             dataIndex:'action',
             key:'action',
-            render:()=>{
+            render:(text,record,index)=>{
                 return(
                     <p>
-                        <a href="#">编辑</a>
+                        <Button>编辑</Button>
                         &nbsp;
-                        <Popconfirm title="Delete?" onConfirm={()=>{}}>
-                            <a href="#">删除</a>
+                        <Popconfirm title="Delete?" onConfirm={()=>{props.onDelete(record.key)}}>
+                            <Button>删除</Button>
                         </Popconfirm>
                     </p>
                 )
@@ -37,8 +37,8 @@ function UsersList({dataSource}){
         }
     ]
   return (
-    <div>Users List
-        <Table columns={columns} dataSource={dataSource.list}></Table>
+    <div>
+        <Table columns={columns} dataSource={props.dataSource.list}></Table>
     </div>
   )
 }
