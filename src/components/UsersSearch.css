@@ -1,0 +1,15 @@
+.search{
+    display:flex;
+    flex-wrap:nowrap;
+    position:relative;
+    margin:30px 0;
+}
+.input{
+    width:200px;
+    margin:0 10px;
+}
+.add{
+    position:absolute;
+    top:0;
+    right:20px;
+}
