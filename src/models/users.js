@@ -24,4 +24,13 @@ export default{
             }
         ]
     },
+    reducers:{
+        'delete'(state,{payload:key}){
+            console.log('key'+key)
+            return state.list.filter(item => {
+                item.key !== key
+                console.log('item.key'+item.key)
+            })
+        }
+    }
 }
