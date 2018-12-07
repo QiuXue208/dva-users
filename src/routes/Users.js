@@ -5,17 +5,22 @@ import UsersModal from '../components/UsersModal'
 import {connect} from 'dva'
 
 function Users(props){
-    const usersSearchProps = {}
     const usersListProps = {
-         dataSource:props.list
+        dataSource:props.list
     }
-    const userModalProps = {}
-    console.log({...usersListProps})
+    function handleDelete(key){
+        console.log(1)
+        props.dispatch({
+            type:'users/delete',
+            payload:key
+        })
+        console.log(2)
+    }
     return(
         <div>User Route Component
-            <UsersSearch {...usersSearchProps}/>
-            <UsersList {...usersListProps} />
-            <UsersModal {...userModalProps}/>
+            <UsersSearch/>
+            <UsersList onDelete={handleDelete} {...usersListProps}/>
+            <UsersModal/>
         </div>
     )
 }
